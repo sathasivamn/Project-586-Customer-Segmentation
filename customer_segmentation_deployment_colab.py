@@ -3,8 +3,16 @@
 # Customer Segmentation Deployment Script (Colab-ready)
 # =====================================================
 
-# Step 1: Install dependencies and mount Google Drive
-!pip install -q scikit-learn==1.2.2 joblib
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import silhouette_score
+import pickle
+import joblib
+import shutil
 
 from google.colab import drive
 drive.mount('/content/drive')
